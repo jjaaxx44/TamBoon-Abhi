@@ -3,10 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0054348023C4974600179B42 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0054347F23C4974600179B42 /* ExtensionTests.swift */; };
+		006BEAFB23C45067008C3BAC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BEAFA23C45067008C3BAC /* Constants.swift */; };
+		006BEAFD23C451E1008C3BAC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BEAFC23C451E1008C3BAC /* APIManager.swift */; };
+		006BEAFF23C4521B008C3BAC /* Charity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BEAFE23C4521B008C3BAC /* Charity.swift */; };
+		006BEB0123C4577B008C3BAC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BEB0023C4577B008C3BAC /* Extensions.swift */; };
+		006BEB0423C46CB6008C3BAC /* CharityTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BEB0223C46CB5008C3BAC /* CharityTableCell.swift */; };
+		006BEB0523C46CB6008C3BAC /* CharityTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BEB0323C46CB5008C3BAC /* CharityTableCell.xib */; };
 		00A8E3F923C432B800076E29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E3F823C432B800076E29 /* AppDelegate.swift */; };
 		00A8E3FB23C432B800076E29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E3FA23C432B800076E29 /* SceneDelegate.swift */; };
 		00A8E40223C432BA00076E29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A8E40123C432BA00076E29 /* Assets.xcassets */; };
@@ -38,6 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0054347F23C4974600179B42 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		006BEAFA23C45067008C3BAC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		006BEAFC23C451E1008C3BAC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		006BEAFE23C4521B008C3BAC /* Charity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charity.swift; sourceTree = "<group>"; };
+		006BEB0023C4577B008C3BAC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		006BEB0223C46CB5008C3BAC /* CharityTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityTableCell.swift; sourceTree = "<group>"; };
+		006BEB0323C46CB5008C3BAC /* CharityTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharityTableCell.xib; sourceTree = "<group>"; };
 		00A8E3F523C432B800076E29 /* TamBoonExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TamBoonExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A8E3F823C432B800076E29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00A8E3FA23C432B800076E29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,9 +133,9 @@
 				00A8E3F823C432B800076E29 /* AppDelegate.swift */,
 				00A8E3FA23C432B800076E29 /* SceneDelegate.swift */,
 				00A8E42823C4367A00076E29 /* Views */,
+				00A8E42E23C4376700076E29 /* Models */,
 				00A8E43023C4378D00076E29 /* Service */,
 				00A8E42F23C4378000076E29 /* Helpers */,
-				00A8E42E23C4376700076E29 /* Models */,
 				00A8E43123C437AA00076E29 /* Support */,
 			);
 			path = TamBoonExample;
@@ -130,6 +144,7 @@
 		00A8E40E23C432BB00076E29 /* TamBoonExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				0054347F23C4974600179B42 /* ExtensionTests.swift */,
 				00A8E40F23C432BB00076E29 /* TamBoonExampleTests.swift */,
 				00A8E41123C432BB00076E29 /* Info.plist */,
 			);
@@ -158,6 +173,8 @@
 			children = (
 				00A8E42A23C436BD00076E29 /* CharityListVC.swift */,
 				00A8E42B23C436BD00076E29 /* CharityListVC.xib */,
+				006BEB0223C46CB5008C3BAC /* CharityTableCell.swift */,
+				006BEB0323C46CB5008C3BAC /* CharityTableCell.xib */,
 			);
 			path = CharityList;
 			sourceTree = "<group>";
@@ -165,6 +182,7 @@
 		00A8E42E23C4376700076E29 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				006BEAFE23C4521B008C3BAC /* Charity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +190,8 @@
 		00A8E42F23C4378000076E29 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				006BEAFA23C45067008C3BAC /* Constants.swift */,
+				006BEB0023C4577B008C3BAC /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -179,6 +199,7 @@
 		00A8E43023C4378D00076E29 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				006BEAFC23C451E1008C3BAC /* APIManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -213,7 +234,6 @@
 				EB2F3F96CD9A41883F779650 /* Pods-TamBoonExampleTests.debug.xcconfig */,
 				5B7E7EB05E7DA2E3D9399A76 /* Pods-TamBoonExampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -327,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00A8E40523C432BA00076E29 /* LaunchScreen.storyboard in Resources */,
+				006BEB0523C46CB6008C3BAC /* CharityTableCell.xib in Resources */,
 				00A8E40223C432BA00076E29 /* Assets.xcassets in Resources */,
 				00A8E42D23C436BD00076E29 /* CharityListVC.xib in Resources */,
 			);
@@ -458,7 +479,12 @@
 			files = (
 				00A8E3F923C432B800076E29 /* AppDelegate.swift in Sources */,
 				00A8E3FB23C432B800076E29 /* SceneDelegate.swift in Sources */,
+				006BEAFD23C451E1008C3BAC /* APIManager.swift in Sources */,
 				00A8E42C23C436BD00076E29 /* CharityListVC.swift in Sources */,
+				006BEAFF23C4521B008C3BAC /* Charity.swift in Sources */,
+				006BEB0423C46CB6008C3BAC /* CharityTableCell.swift in Sources */,
+				006BEAFB23C45067008C3BAC /* Constants.swift in Sources */,
+				006BEB0123C4577B008C3BAC /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00A8E41023C432BB00076E29 /* TamBoonExampleTests.swift in Sources */,
+				0054348023C4974600179B42 /* ExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
