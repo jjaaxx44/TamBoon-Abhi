@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001D7C5C23C4C10A00E1576E /* OmiseSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001D7C5B23C4C10A00E1576E /* OmiseSDK.framework */; };
 		0054348023C4974600179B42 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0054347F23C4974600179B42 /* ExtensionTests.swift */; };
 		006BEAFB23C45067008C3BAC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BEAFA23C45067008C3BAC /* Constants.swift */; };
 		006BEAFD23C451E1008C3BAC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BEAFC23C451E1008C3BAC /* APIManager.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		001D7C5B23C4C10A00E1576E /* OmiseSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OmiseSDK.framework; path = Carthage/Build/iOS/OmiseSDK.framework; sourceTree = SOURCE_ROOT; };
 		0054347F23C4974600179B42 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		006BEAFA23C45067008C3BAC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		006BEAFC23C451E1008C3BAC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				989F1E0737E231E4598CA1A4 /* Pods_TamBoonExample.framework in Frameworks */,
+				001D7C5C23C4C10A00E1576E /* OmiseSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001D7C5A23C4C0D000E1576E /* OmiseLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				001D7C5B23C4C10A00E1576E /* OmiseSDK.framework */,
+			);
+			path = OmiseLibrary;
+			sourceTree = "<group>";
+		};
 		00A8E3EC23C432B700076E29 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +147,7 @@
 				00A8E42E23C4376700076E29 /* Models */,
 				00A8E43023C4378D00076E29 /* Service */,
 				00A8E42F23C4378000076E29 /* Helpers */,
+				001D7C5A23C4C0D000E1576E /* OmiseLibrary */,
 				00A8E43123C437AA00076E29 /* Support */,
 			);
 			path = TamBoonExample;
@@ -652,6 +664,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TamBoonExample/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -670,6 +686,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TamBoonExample/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
