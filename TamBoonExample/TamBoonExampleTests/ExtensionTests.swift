@@ -43,5 +43,31 @@ class ExtensionTests: XCTestCase {
         XCTAssertNil(charityWrong)
     }
 
+    func testAmountValidator() {
+        var amount = "123"
+        XCTAssertTrue(amount.isValidAmount)
+        amount = "123.123"
+        XCTAssertTrue(amount.isValidAmount)
+        amount = "0.123"
+        XCTAssertTrue(amount.isValidAmount)
+        amount = "1123.0"
+        XCTAssertTrue(amount.isValidAmount)
+        amount = ".123"
+        XCTAssertTrue(amount.isValidAmount)
 
+        amount = "."
+        XCTAssertFalse(amount.isValidAmount)
+        amount = ""
+        XCTAssertFalse(amount.isValidAmount)
+        amount = "123."
+        XCTAssertFalse(amount.isValidAmount)
+        amount = "1.2.3"
+        XCTAssertFalse(amount.isValidAmount)
+        amount = "a.1"
+        XCTAssertFalse(amount.isValidAmount)
+        amount = "a"
+        XCTAssertFalse(amount.isValidAmount)
+        amount = "1.a"
+        XCTAssertFalse(amount.isValidAmount)
+    }
 }

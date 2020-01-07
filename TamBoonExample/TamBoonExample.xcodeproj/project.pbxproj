@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001D7C5C23C4C10A00E1576E /* OmiseSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001D7C5B23C4C10A00E1576E /* OmiseSDK.framework */; };
 		0054348023C4974600179B42 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0054347F23C4974600179B42 /* ExtensionTests.swift */; };
+		0059131023C4EA1600C670DE /* DonationFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059130E23C4EA1600C670DE /* DonationFormVC.swift */; };
+		0059131123C4EA1600C670DE /* DonationFormVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0059130F23C4EA1600C670DE /* DonationFormVC.xib */; };
+		0059131223C4EDDE00C670DE /* OmiseSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001D7C5B23C4C10A00E1576E /* OmiseSDK.framework */; };
+		0059131323C4EDDE00C670DE /* OmiseSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 001D7C5B23C4C10A00E1576E /* OmiseSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		006BEAFB23C45067008C3BAC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BEAFA23C45067008C3BAC /* Constants.swift */; };
 		006BEAFD23C451E1008C3BAC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BEAFC23C451E1008C3BAC /* APIManager.swift */; };
 		006BEAFF23C4521B008C3BAC /* Charity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BEAFE23C4521B008C3BAC /* Charity.swift */; };
@@ -45,9 +48,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0059131423C4EDDE00C670DE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0059131323C4EDDE00C670DE /* OmiseSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		001D7C5B23C4C10A00E1576E /* OmiseSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OmiseSDK.framework; path = Carthage/Build/iOS/OmiseSDK.framework; sourceTree = SOURCE_ROOT; };
 		0054347F23C4974600179B42 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		0059130E23C4EA1600C670DE /* DonationFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationFormVC.swift; sourceTree = "<group>"; };
+		0059130F23C4EA1600C670DE /* DonationFormVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonationFormVC.xib; sourceTree = "<group>"; };
 		006BEAFA23C45067008C3BAC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		006BEAFC23C451E1008C3BAC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		006BEAFE23C4521B008C3BAC /* Charity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charity.swift; sourceTree = "<group>"; };
@@ -85,7 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				989F1E0737E231E4598CA1A4 /* Pods_TamBoonExample.framework in Frameworks */,
-				001D7C5C23C4C10A00E1576E /* OmiseSDK.framework in Frameworks */,
+				0059131223C4EDDE00C670DE /* OmiseSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +133,15 @@
 				001D7C5B23C4C10A00E1576E /* OmiseSDK.framework */,
 			);
 			path = OmiseLibrary;
+			sourceTree = "<group>";
+		};
+		0059130D23C4E9E300C670DE /* DonationForm */ = {
+			isa = PBXGroup;
+			children = (
+				0059130E23C4EA1600C670DE /* DonationFormVC.swift */,
+				0059130F23C4EA1600C670DE /* DonationFormVC.xib */,
+			);
+			path = DonationForm;
 			sourceTree = "<group>";
 		};
 		00A8E3EC23C432B700076E29 = {
@@ -175,6 +203,7 @@
 		00A8E42823C4367A00076E29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0059130D23C4E9E300C670DE /* DonationForm */,
 				00A8E42923C4368800076E29 /* CharityList */,
 			);
 			path = Views;
@@ -261,6 +290,7 @@
 				00A8E3F223C432B800076E29 /* Frameworks */,
 				00A8E3F323C432B800076E29 /* Resources */,
 				874EABFE6ED3438EE5D4F75E /* [CP] Embed Pods Frameworks */,
+				0059131423C4EDDE00C670DE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,6 +390,7 @@
 			files = (
 				00A8E40523C432BA00076E29 /* LaunchScreen.storyboard in Resources */,
 				006BEB0523C46CB6008C3BAC /* CharityTableCell.xib in Resources */,
+				0059131123C4EA1600C670DE /* DonationFormVC.xib in Resources */,
 				00A8E40223C432BA00076E29 /* Assets.xcassets in Resources */,
 				00A8E42D23C436BD00076E29 /* CharityListVC.xib in Resources */,
 			);
@@ -491,6 +522,7 @@
 			files = (
 				00A8E3F923C432B800076E29 /* AppDelegate.swift in Sources */,
 				00A8E3FB23C432B800076E29 /* SceneDelegate.swift in Sources */,
+				0059131023C4EA1600C670DE /* DonationFormVC.swift in Sources */,
 				006BEAFD23C451E1008C3BAC /* APIManager.swift in Sources */,
 				00A8E42C23C436BD00076E29 /* CharityListVC.swift in Sources */,
 				006BEAFF23C4521B008C3BAC /* Charity.swift in Sources */,

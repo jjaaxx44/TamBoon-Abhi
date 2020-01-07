@@ -70,4 +70,9 @@ extension CharityListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let donationVC = DonationFormVC(charity: charities[indexPath.row])
+        self.navigationController?.pushViewController(donationVC, animated: true)
+    }
 }

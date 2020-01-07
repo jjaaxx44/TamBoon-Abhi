@@ -27,3 +27,11 @@ extension UIView {
         self.layer.cornerRadius = cornerRadius
     }
 }
+
+extension String {
+    var isValidAmount: Bool {
+        let regularExpressionForEmail = #"^(\d*\.)?\d+$"#
+        let testEmail = NSPredicate(format:"SELF MATCHES %@", regularExpressionForEmail)
+        return testEmail.evaluate(with: self)
+    }
+}
