@@ -11,14 +11,14 @@ import Toast_Swift
 
 class CharityListVC: UIViewController {
     
-    @IBOutlet weak var charityTabelViewController: UITableView!
+    @IBOutlet weak var charityTabelView: UITableView!
     private let refreshControl = UIRefreshControl()
     let cellIdentifier = "CharityTableCell"
     
     var charities: [Charity] = [] {
         didSet {
             if isViewLoaded {
-                charityTabelViewController.reloadData()
+                charityTabelView.reloadData()
             }
         }
     }
@@ -31,8 +31,9 @@ class CharityListVC: UIViewController {
     }
     
     func setupView() {
-        charityTabelViewController.register(UINib(nibName: "CharityTableCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        charityTabelViewController.refreshControl = refreshControl
+        self.title = "Charities"
+        charityTabelView.register(UINib(nibName: "CharityTableCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        charityTabelView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshCharityList(_:)), for: .valueChanged)
     }
     

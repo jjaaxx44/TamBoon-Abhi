@@ -11,6 +11,7 @@ import OmiseSDK
 
 class DonationFormVC: UIViewController {
     @IBOutlet weak var charityImageView: UIImageView!
+    @IBOutlet weak var amountTextField: UITextField!
     private let charity: Charity!
     private let publicKey = "pkey_test_5ihexc8xj515r5di23o"
 
@@ -39,6 +40,39 @@ class DonationFormVC: UIViewController {
         }
         self.charityImageView.kf.setImage(with: url, placeholder: UIImage(named: "noimage"),options: [.transition(.fade(0.2))])
     }
+    
+    // MARK: - Actions
+    func makeDonation(token: Token) {
+        self.view.makeToastActivity(.center)
+        self.view.isUserInteractionEnabled = false
+        self.navigationItem.hidesBackButton = true
+        guard let name = token.card.name,
+            let amountString = amountTextField.text,
+            let amount = Double(amountString) else {
+            return
+        }
+        APIManager.shared.donateTo(id: charity.id, amount: amount, name: name, token: token.id) { result in
+            switch result{
+            case .success(_):
+                Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (timer) in
+                    self.view.hideToastActivity()
+                    self.navigationItem.hidesBackButton = false
+                    let donationSuccessVC = DonationSuccessVC(charity: self.charity)
+                    self.navigationController?.pushViewController(donationSuccessVC, animated: true)
+                }
+            case .failure(let err):
+                switch err {
+                case .apiFailed, .donationFailed, .invalidInput:
+                    self.view.makeToast("Donation failed!")
+                default:
+                    self.view.makeToast("Something went wrong!")
+                }
+                self.view.hideToastActivity()
+                self.view.isUserInteractionEnabled = true
+                self.navigationItem.hidesBackButton = false
+            }
+        }
+    }
 }
 
 extension DonationFormVC: UITextFieldDelegate, CreditCardFormViewControllerDelegate {
@@ -65,7 +99,7 @@ extension DonationFormVC: UITextFieldDelegate, CreditCardFormViewControllerDeleg
     // MARK: - CC form delegate
     func creditCardFormViewController(_ controller: CreditCardFormViewController, didSucceedWithToken token: Token) {
         self.dismiss(animated: true, completion: nil)
-        
+        makeDonation(token: token)
         // Sends `Token` to your server to create a charge, or a customer object.
     }
     

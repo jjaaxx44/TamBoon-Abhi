@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DonationFormVC" customModule="TamBoonExample" customModuleProvider="target">
             <connections>
+                <outlet property="amountTextField" destination="4GL-fg-4zK" id="awB-Ng-U3J"/>
                 <outlet property="charityImageView" destination="umV-LW-aX2" id="bdo-ok-1pi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -20,12 +20,14 @@ struct TamboonAPI {
 
 struct APIParameters {
     static let name = "name"
+    static let charityId = "charityId"
     static let token = "token"
     static let amount = "amount"
 }
 
 enum GenralError: Error {
     case apiFailed
+    case donationFailed
     case invalidInput
     case dataError
 }
