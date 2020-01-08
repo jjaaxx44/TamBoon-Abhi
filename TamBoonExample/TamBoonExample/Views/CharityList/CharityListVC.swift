@@ -43,6 +43,9 @@ class CharityListVC: UIViewController {
     
     // MARK: - data fetch
     func fetchCharities() {
+        if !refreshControl.isRefreshing {
+            self.view.makeToastActivity(.center)
+        }
         APIManager.shared.getCharities { result in
             switch result{
             case .success(let charities):
@@ -51,6 +54,9 @@ class CharityListVC: UIViewController {
                 self.view.makeToast("Something went wrong!")
             }
             self.refreshControl.endRefreshing()
+            if !self.refreshControl.isRefreshing {
+                self.view.hideToastActivity()
+            }
         }
     }
 }
